@@ -1,0 +1,16 @@
+.Logo {
+  min-width: 290px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.Logo svg {
+  width: 36px;
+}
+
+.Logo span {
+  font-size: 36px;
+  font-weight: 700;
+  margin-left: 12px;
+}

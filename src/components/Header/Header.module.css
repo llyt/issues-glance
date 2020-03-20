@@ -1,0 +1,9 @@
+header {
+  width: 100%;
+  background-color: #24292E;
+}
+
+.Header {
+  display: flex;
+  padding: 12px 0;
+}
