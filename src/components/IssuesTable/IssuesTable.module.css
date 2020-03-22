@@ -1,0 +1,61 @@
+.IssuesTable {
+  margin-top: 25px;
+  border: 1px solid #DFDFDF;
+  border-radius: 3px;
+}
+table {
+  width: 100%;
+  display: table;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 16px;
+}
+
+th {
+  text-align: left;
+}
+
+td, .Pagination {
+  border-top: 1px solid #DFDFDF
+}
+
+td span {
+  color: #ccc;
+}
+
+.Pagination {
+  padding: 12px 24px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.PaginationPerPage {
+  display: flex;
+  align-items: center;
+}
+
+.Selector{
+  margin-left: 12px;
+}
+
+.PaginationCountOf, .PaginationNav {
+  margin-left: 24px;
+}
+
+.PaginationNav button {
+  cursor: pointer;
+  padding: 7px 9px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color ease .25s;
+}
+
+.PaginationNav button:hover {
+  background-color: #DFDFDF;
+}

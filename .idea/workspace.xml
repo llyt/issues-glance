@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d993f8e-1e06-48c7-b778-7158e59cf33c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserInfo/UserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/repos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserInfo/UserInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/issues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/issues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IssuesList/IssuesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesList/IssuesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IssuesList/IssuesList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesList/IssuesList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Table/Table.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Table/Table.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -93,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584722183991</updated>
-      <workItem from="1584722188962" duration="783000" />
+      <workItem from="1584722188962" duration="12014000" />
     </task>
     <servers />
   </component>
@@ -118,21 +120,21 @@
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
     <state x="-1080" y="181" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584722207851" />
-    <state width="1053" height="545" key="GridCell.Tab.0.bottom" timestamp="1584722171893">
+    <state width="1053" height="545" key="GridCell.Tab.0.bottom" timestamp="1584723067096">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="545" key="GridCell.Tab.0.bottom/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584722171893" />
-    <state width="1053" height="545" key="GridCell.Tab.0.center" timestamp="1584722171893">
+    <state width="1053" height="545" key="GridCell.Tab.0.bottom/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584723067096" />
+    <state width="1053" height="545" key="GridCell.Tab.0.center" timestamp="1584723067096">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="545" key="GridCell.Tab.0.center/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584722171893" />
-    <state width="1053" height="545" key="GridCell.Tab.0.left" timestamp="1584722171892">
+    <state width="1053" height="545" key="GridCell.Tab.0.center/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584723067096" />
+    <state width="1053" height="545" key="GridCell.Tab.0.left" timestamp="1584723067095">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="545" key="GridCell.Tab.0.left/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584722171892" />
-    <state width="1053" height="545" key="GridCell.Tab.0.right" timestamp="1584722171893">
+    <state width="1053" height="545" key="GridCell.Tab.0.left/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584723067095" />
+    <state width="1053" height="545" key="GridCell.Tab.0.right" timestamp="1584723067096">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="545" key="GridCell.Tab.0.right/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584722171893" />
+    <state width="1053" height="545" key="GridCell.Tab.0.right/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584723067096" />
   </component>
 </project>
