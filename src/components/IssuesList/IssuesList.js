@@ -1,16 +1,36 @@
 import React from 'react'
 import styles from './IssuesList.module.css'
-import issues from '../../api/issues'
 import IssuesTable from '../IssuesTable/IssuesTable'
+import * as userSelectors from '../../store/user/selectors'
+import * as issuesSelectors from '../../store/issues/selectors'
+import {connect} from 'react-redux'
 
-const IssuesList = () => {
+const IssuesList = ({ repoName, issuesList, issuesTotalCount }) => {
+
+  if (issuesList.length === 0) {
+    return null
+  }
 
   return (
     <div className={`${styles.IssuesList} container`}>
-      <h2>react issues: 18091</h2>
-      <IssuesTable data={issues} />
+      <h2>{repoName} issues: {issuesTotalCount}</h2>
+      <IssuesTable data={issuesList} />
     </div>
   )
 }
 
-export default IssuesList
+const mapStateToProps = (state) => (
+  {
+    repoName: userSelectors.getPointerRepository(state),
+    issuesList: issuesSelectors.getIssuesList(state),
+    issuesTotalCount: issuesSelectors.getIssuesTotalCount(state)
+  }
+)
+
+const mapDispatchToProps = (dispatch) => (
+  {
+
+  }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(IssuesList)

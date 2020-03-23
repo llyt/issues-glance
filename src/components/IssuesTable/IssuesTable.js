@@ -29,9 +29,9 @@ const IssuesTable = ({data}) => {
         </tr>
         </thead>
         <tbody>
-        {data.map(({status, title, number, author, openDate}) => (
+        {data.map(({state, title, number, author, openDate}) => (
           <tr key={number}>
-            <td>{makeTableCell(status)}</td>
+            <td>{makeTableCell(state)}</td>
             <td>{makeTableCell(title)}</td>
             <td>{makeTableCell(number)}</td>
             <td>{makeTableCell(author)}</td>
