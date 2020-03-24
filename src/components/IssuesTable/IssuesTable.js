@@ -15,7 +15,7 @@ const IssuesTable = React.memo((
     paginationHandler,
     perPageHandler
   }) => {
-
+  // TODO Fix when issues on page less than total
   const paginationCountOf = `${currentPage * perPage - perPage + 1}-${currentPage * perPage} of ${issuesTotalCount}`
 
   const selectHandler = ({ value }) => {
@@ -103,7 +103,6 @@ const IssuesTable = React.memo((
           <div className={styles.PaginationCountOf}>{paginationCountOf}</div>
           <div className={styles.PaginationNav}>
             <Button
-              title={currentPage !== 1 && `Go to "${currentPage - 1}" page`}
               type='button'
               name='prev'
               disabled={currentPage === 1}
@@ -112,7 +111,6 @@ const IssuesTable = React.memo((
             &#8592;
             </Button>
             <Button
-              title={`Go to "${currentPage + 1}" page`}
               type='button'
               name='next'
               onClick={onClickPagination}

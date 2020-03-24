@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 const Button = ({title, type, name, disabled, onClick, children}) => (
   <button
-    title={title}
     type={type || 'button'}
     disabled={disabled}
     name={name}
@@ -16,7 +15,6 @@ const Button = ({title, type, name, disabled, onClick, children}) => (
 export default Button
 
 Button.propTypes = {
-  title: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string,
   disabled: PropTypes.bool,

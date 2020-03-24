@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5d993f8e-1e06-48c7-b778-7158e59cf33c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IssuesList/IssuesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesList/IssuesList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Button/Button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/issues/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/issues/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/Logo/Logo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Logo/Logo.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
