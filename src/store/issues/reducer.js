@@ -1,5 +1,6 @@
 import { initialState } from './index'
 import * as types from './types'
+import { FIND_USER } from '../user/types'
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -15,6 +16,14 @@ export default (state = initialState, action) => {
         fetchedIssues: action.payload.issues,
         issuesTotalCount: action.payload.total
       }
+
+    case FIND_USER:
+      if (state.fetchedIssues.length !== 0) {
+        return {
+          ...initialState,
+        }
+      }
+      return state
 
     default:
       return state
