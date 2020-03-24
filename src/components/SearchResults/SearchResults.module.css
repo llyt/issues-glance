@@ -1,10 +1,14 @@
 .SearchResults {
-  padding: 30px;
+  padding: 30px 20px;
 }
 
 .SearchResultsCount {
   font-size: 28px;
-  display: block;
+  display: flex;
+}
+
+.SearchResultsCount p {
+  margin: 0;
 }
 
 .Selector {

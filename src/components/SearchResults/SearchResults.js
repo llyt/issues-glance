@@ -7,7 +7,14 @@ import * as issuesActions from '../../store/issues/actions'
 import * as userSelectors from '../../store/user/selectors'
 import Loader from '../UI/Loader/Loader'
 
-const SearchResults = React.memo(({ userName, usersRepositories, totalCount, isLoading, selectPointerRepository }) => {
+const SearchResults = React.memo((
+  {
+    userName,
+    usersRepositories,
+    totalCount,
+    isLoading,
+    selectPointerRepository,
+  }) => {
   const selectHandler = ({ value }) => {
     selectPointerRepository(value)
   }
@@ -22,7 +29,9 @@ const SearchResults = React.memo(({ userName, usersRepositories, totalCount, isL
 
   return (
     <section className={`${styles.SearchResults} container`}>
-      <div className={styles.SearchResultsCount}>{userName} has <strong>{totalCount}</strong> repo</div>
+      <div className={styles.SearchResultsCount}>
+        <p>{userName} has <strong>{totalCount}</strong> repo</p>
+      </div>
       {usersRepositories.length !== 0
         && <Select
             className={styles.Selector}
@@ -47,7 +56,7 @@ const mapStateToProps = (state) => (
 
 const mapDispatchToProps = (dispatch) => (
   {
-    selectPointerRepository: (value) => dispatch(issuesActions.selectPointerRepository(value))
+    selectPointerRepository: (value) => dispatch(issuesActions.selectPointerRepository(value)),
   }
 )
 
@@ -58,5 +67,5 @@ SearchResults.propTypes = {
   usersRepositories: PropTypes.array,
   totalCount: PropTypes.number,
   isLoading: PropTypes.bool,
-  selectPointerRepository: PropTypes.func
+  selectPointerRepository: PropTypes.func,
 }

@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 
 const IssuesList = React.memo((
   {
+    isLoading,
     repoName,
     issuesList,
     issuesTotalCount,
@@ -16,14 +17,15 @@ const IssuesList = React.memo((
     perPageHandle,
   }) => {
 
-  if (!issuesTotalCount) {
+  if (issuesTotalCount === null) {
     return null
   }
 
   return (
-    <div className={`${styles.IssuesList} container`}>
-      <h2>{repoName} issues: {issuesTotalCount}</h2>
+    <section className={`${styles.IssuesList} container`}>
+      <h2>"{repoName}" issues: {issuesTotalCount}</h2>
       <IssuesTable
+        isLoading={isLoading}
         data={issuesList}
         currentPage={currentPage}
         paginationHandler={paginationHandle}
@@ -31,12 +33,13 @@ const IssuesList = React.memo((
         issuesTotalCount={issuesTotalCount}
         perPageHandler={perPageHandle}
       />
-    </div>
+    </section>
   )
 })
 
 const mapStateToProps = (state) => (
   {
+    isLoading: issuesSelectors.getLoadingState(state),
     repoName: issuesSelectors.getPointerRepository(state),
     issuesList: issuesSelectors.getIssuesList(state),
     issuesTotalCount: issuesSelectors.getIssuesTotalCount(state),

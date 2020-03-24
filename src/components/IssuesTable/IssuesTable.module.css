@@ -82,6 +82,12 @@ td a > img {
   transition: background-color ease .25s;
 }
 
+
 .PaginationNav button:hover {
   background-color: #DFDFDF;
+}
+
+.PaginationNav button:disabled {
+  cursor: default;
+  background-color: transparent;
 }

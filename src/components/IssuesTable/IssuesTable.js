@@ -7,6 +7,7 @@ import Loader from '../UI/Loader/Loader'
 
 const IssuesTable = React.memo((
   {
+    isLoading,
     data,
     currentPage,
     perPage,
@@ -29,10 +30,6 @@ const IssuesTable = React.memo((
     paginationHandler(nextPageDispatch[event.target.name])
   }
 
-  if (data.length === 0) {
-    return <Loader />
-  }
-
   const tableHeads = ['Status', 'Title', 'Number', 'Author', 'Open Date']
 
   const paginationOptions = [
@@ -47,7 +44,7 @@ const IssuesTable = React.memo((
   const makeAuthorTableCell = ({ html_url, avatar_url, login }) => (
     <a
       href={html_url}
-      title='Open author page in new tab'
+      title={`Open GitHub profile in new tab`}
       target='_blank'
       rel='noopener noreferrer'
     >
@@ -59,6 +56,10 @@ const IssuesTable = React.memo((
   const makeTimeTableCell = (date) => {
     const timeStampDate = new Date(Date.parse(date))
     return timeStampDate.toLocaleDateString()
+  }
+
+  if (isLoading) {
+    return <Loader />
   }
 
   if (data.length === 0) {
@@ -102,17 +103,19 @@ const IssuesTable = React.memo((
           <div className={styles.PaginationCountOf}>{paginationCountOf}</div>
           <div className={styles.PaginationNav}>
             <Button
-            type='button'
-            name='prev'
-            disabled={currentPage === 1}
-            onClick={onClickPagination}
+              title={currentPage !== 1 && `Go to "${currentPage - 1}" page`}
+              type='button'
+              name='prev'
+              disabled={currentPage === 1}
+              onClick={onClickPagination}
             >
             &#8592;
             </Button>
             <Button
-            type='button'
-            name='next'
-            onClick={onClickPagination}
+              title={`Go to "${currentPage + 1}" page`}
+              type='button'
+              name='next'
+              onClick={onClickPagination}
             >
             &#8594;
             </Button>
@@ -126,6 +129,7 @@ const IssuesTable = React.memo((
 export default IssuesTable
 
 IssuesTable.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   data: PropTypes.array.isRequired,
   currentPage: PropTypes.number.isRequired,
   perPage: PropTypes.number.isRequired,

@@ -33,12 +33,9 @@ export default (state = initialState, action) => {
       }
 
     case FIND_USER:
-      if (state.fetchedIssues.length !== 0) {
-        return {
-          ...initialState,
-        }
+      return {
+        ...initialState,
       }
-      return state
 
     case types.PAGINATION_HANDLE:
       return {
