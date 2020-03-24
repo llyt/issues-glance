@@ -5,6 +5,7 @@ export const initialState = {
   isLoading: false,
   pointerRepository: null,
   fetchedIssues: [],
+  page: 1,
   perPage: 10,
   issuesTotalCount: null
 }

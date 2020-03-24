@@ -2,13 +2,29 @@ import React from 'react'
 import styles from './IssuesTable.module.css'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
+import Button from '../UI/Button/Button'
 
-const IssuesTable = ({data}) => {
+const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHandler, perPageHandler}) => {
+  const paginationCountOf = `${currentPage * perPage - perPage + 1}-${currentPage * perPage} of ${issuesTotalCount}`
+
+  const selectHandler = ({ value }) => {
+    perPageHandler(value)
+  }
+
+  const onClickPagination = (event) => {
+    const nextPageDispatch = {
+      'prev': currentPage - 1,
+      'next': currentPage + 1
+    }
+    paginationHandler(nextPageDispatch[event.target.name])
+  }
+
   if (data.length === 0) {
     return <div>Data is empty</div>
   }
 
   const tableHeads = ['Status', 'Title', 'Number', 'Author', 'Open Date']
+
   const paginationOptions = [
     { value: '10', label: '10' },
     { value: '25', label: '25' },
@@ -47,20 +63,40 @@ const IssuesTable = ({data}) => {
             className={styles.Selector}
             options={paginationOptions}
             defaultValue={paginationOptions[0]}
+            onChange={selectHandler}
           />
         </div>
-        <div className={styles.PaginationCountOf}>1-10 of 18091</div>
+        <div className={styles.PaginationCountOf}>{paginationCountOf}</div>
         <div className={styles.PaginationNav}>
-          <button type='button'>&#8592;</button>
-          <button type='button'>&#8594;</button>
+          <Button
+            type='button'
+            name='prev'
+            disabled={currentPage === 1}
+            onClick={onClickPagination}
+          >
+            &#8592;
+          </Button>
+          <Button
+            type='button'
+            name='next'
+            onClick={onClickPagination}
+          >
+            &#8594;
+          </Button>
         </div>
       </div>
     </div>
   )
 }
 
+
 export default IssuesTable
 
 IssuesTable.propTypes = {
   data: PropTypes.array.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  perPage: PropTypes.number.isRequired,
+  issuesTotalCount: PropTypes.number.isRequired,
+  paginationHandler: PropTypes.func.isRequired,
+  perPageHandler: PropTypes.func.isRequired
 }

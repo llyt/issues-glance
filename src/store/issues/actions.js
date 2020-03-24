@@ -16,3 +16,17 @@ export const fetch_issues = (issues, total) => (
     }
   }
 )
+
+export const paginationHandle = (newPage) => (
+  {
+    type: types.PAGINATION_HANDLE,
+    payload: { newPage }
+  }
+)
+
+export const perPageHandle = (value) => (
+  {
+    type: types.PER_PAGE_HANDLE,
+    payload: { value }
+  }
+)

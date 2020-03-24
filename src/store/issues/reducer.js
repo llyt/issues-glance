@@ -25,6 +25,18 @@ export default (state = initialState, action) => {
       }
       return state
 
+    case types.PAGINATION_HANDLE:
+      return {
+        ...state,
+        page: action.payload.newPage
+      }
+
+    case types.PER_PAGE_HANDLE:
+      return {
+        ...state,
+        perPage: action.payload.value
+      }
+
     default:
       return state
   }
