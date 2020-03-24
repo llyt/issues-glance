@@ -56,35 +56,37 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
         ))}
         </tbody>
       </table>
-      <div className={styles.Pagination}>
-        <div className={styles.PaginationPerPage}>
-          <span>Rows per page:</span>
-          <Select
+      { (issuesTotalCount / perPage) > 1
+        &&
+        <div className={styles.Pagination}>
+          <div className={styles.PaginationPerPage}>
+            <span>Rows per page:</span>
+            <Select
             className={styles.Selector}
             options={paginationOptions}
             defaultValue={paginationOptions[0]}
             onChange={selectHandler}
-          />
-        </div>
-        <div className={styles.PaginationCountOf}>{paginationCountOf}</div>
-        <div className={styles.PaginationNav}>
-          <Button
+            />
+          </div>
+          <div className={styles.PaginationCountOf}>{paginationCountOf}</div>
+          <div className={styles.PaginationNav}>
+            <Button
             type='button'
             name='prev'
             disabled={currentPage === 1}
             onClick={onClickPagination}
-          >
+            >
             &#8592;
-          </Button>
-          <Button
+            </Button>
+            <Button
             type='button'
             name='next'
             onClick={onClickPagination}
-          >
+            >
             &#8594;
-          </Button>
-        </div>
-      </div>
+            </Button>
+          </div>
+        </div> }
     </div>
   )
 }

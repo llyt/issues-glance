@@ -1,5 +1,5 @@
 import { takeLatest, call, put, select } from 'redux-saga/effects'
-import { SELECT_POINTER_REPOSITORY, PAGINATION_HANDLE } from '../issues/types'
+import { SELECT_POINTER_REPOSITORY, PAGINATION_HANDLE, PER_PAGE_HANDLE } from '../issues/types'
 import { getUserName } from '../user/selectors'
 import { getPage, getPerPage, getPointerRepository } from './selectors'
 import * as issuesActions from './actions'
@@ -7,6 +7,7 @@ import * as issuesActions from './actions'
 
 export default function* userSaga() {
   yield takeLatest(SELECT_POINTER_REPOSITORY, repoFlow)
+  yield takeLatest(PER_PAGE_HANDLE, repoFlow)
   yield takeLatest(PAGINATION_HANDLE, repoFlow)
 }
 
@@ -28,6 +29,7 @@ function* repoFlow() {
       }
       ))
     yield put(issuesActions.fetch_issues(issues, total_count))
+    yield window.scrollTo(0, 0)
   } catch (error) {
     console.error(error)
     // TODO Show error in IssuesList component

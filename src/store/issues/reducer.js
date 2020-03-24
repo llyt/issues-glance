@@ -34,7 +34,7 @@ export default (state = initialState, action) => {
     case types.PER_PAGE_HANDLE:
       return {
         ...state,
-        perPage: action.payload.value
+        perPage: Number(action.payload.value)
       }
 
     default:
