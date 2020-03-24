@@ -25,7 +25,7 @@ function* repoFlow() {
         title,
         number,
         openDate: created_at,
-        author: user.login
+        author: user
       }
       ))
     yield put(issuesActions.fetch_issues(issues, total_count))

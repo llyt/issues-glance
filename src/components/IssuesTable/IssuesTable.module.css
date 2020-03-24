@@ -27,6 +27,32 @@ td span {
   color: #ccc;
 }
 
+td a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+td a > span {
+  color: #24292E;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+td a:hover > span {
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+
+
+td a > img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
 .Pagination {
   padding: 12px 24px;
   display: flex;

@@ -34,6 +34,21 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
 
   const makeTableCell = (prop) => prop ? prop : <span>No data</span>
 
+  const makeAuthorTableCell = (author) => (
+    <a
+      href={author.html_url}
+      title='Open author page in new tab'
+      target='_blank'>
+      <img src={author.avatar_url} />
+      <span>{author.login}</span>
+    </a>
+  )
+
+  const makeTimeTableCell = (date) => {
+    const timeStampDate = new Date(Date.parse(date))
+    return timeStampDate.toLocaleDateString()
+  }
+
   return (
     <div className={styles.IssuesTable}>
       <table>
@@ -50,8 +65,8 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
             <td>{makeTableCell(state)}</td>
             <td>{makeTableCell(title)}</td>
             <td>{makeTableCell(number)}</td>
-            <td>{makeTableCell(author)}</td>
-            <td>{makeTableCell(openDate)}</td>
+            <td>{makeAuthorTableCell(author)}</td>
+            <td>{makeTimeTableCell(openDate)}</td>
           </tr>
         ))}
         </tbody>

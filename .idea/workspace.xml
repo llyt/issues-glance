@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5d993f8e-1e06-48c7-b778-7158e59cf33c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/issues/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/issues/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/saga.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
