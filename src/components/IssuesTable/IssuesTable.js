@@ -3,8 +3,18 @@ import styles from './IssuesTable.module.css'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
 import Button from '../UI/Button/Button'
+import Loader from '../UI/Loader/Loader'
 
-const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHandler, perPageHandler}) => {
+const IssuesTable = React.memo((
+  {
+    data,
+    currentPage,
+    perPage,
+    issuesTotalCount,
+    paginationHandler,
+    perPageHandler
+  }) => {
+
   const paginationCountOf = `${currentPage * perPage - perPage + 1}-${currentPage * perPage} of ${issuesTotalCount}`
 
   const selectHandler = ({ value }) => {
@@ -20,7 +30,7 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
   }
 
   if (data.length === 0) {
-    return <div>Data is empty</div>
+    return <Loader />
   }
 
   const tableHeads = ['Status', 'Title', 'Number', 'Author', 'Open Date']
@@ -34,19 +44,25 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
 
   const makeTableCell = (prop) => prop ? prop : <span>No data</span>
 
-  const makeAuthorTableCell = (author) => (
+  const makeAuthorTableCell = ({ html_url, avatar_url, login }) => (
     <a
-      href={author.html_url}
+      href={html_url}
       title='Open author page in new tab'
-      target='_blank'>
-      <img src={author.avatar_url} />
-      <span>{author.login}</span>
+      target='_blank'
+      rel='noopener noreferrer'
+    >
+      <img src={avatar_url} alt={login} />
+      <span>{login}</span>
     </a>
   )
 
   const makeTimeTableCell = (date) => {
     const timeStampDate = new Date(Date.parse(date))
     return timeStampDate.toLocaleDateString()
+  }
+
+  if (data.length === 0) {
+    return null
   }
 
   return (
@@ -60,7 +76,7 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
         </tr>
         </thead>
         <tbody>
-        {data.map(({state, title, number, author, openDate}) => (
+        {data.map(({state, title, number, author, openDate}, index) => (
           <tr key={number}>
             <td>{makeTableCell(state)}</td>
             <td>{makeTableCell(title)}</td>
@@ -79,7 +95,7 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
             <Select
             className={styles.Selector}
             options={paginationOptions}
-            defaultValue={paginationOptions[0]}
+            defaultValue={paginationOptions.filter(({value}) => Number(value) === perPage)}
             onChange={selectHandler}
             />
           </div>
@@ -104,7 +120,7 @@ const IssuesTable = ({data, currentPage, perPage, issuesTotalCount, paginationHa
         </div> }
     </div>
   )
-}
+})
 
 
 export default IssuesTable

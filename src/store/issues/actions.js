@@ -7,6 +7,18 @@ export const selectPointerRepository = (value) => (
   }
 )
 
+export const onLoader = () => (
+  {
+    type: types.ON_LOADER
+  }
+)
+
+export const offLoader = () => (
+  {
+    type: types.OFF_LOADER
+  }
+)
+
 export const fetch_issues = (issues, total) => (
   {
     type: types.FETCH_ISSUES,
@@ -23,6 +35,7 @@ export const paginationHandle = (newPage) => (
     payload: { newPage }
   }
 )
+
 
 export const perPageHandle = (value) => (
   {

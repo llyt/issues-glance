@@ -5,7 +5,7 @@ import styles from './SearchForm.module.css'
 import { ReactComponent as PersonIcon } from '../../../static/icons/person-icon.svg'
 import  * as userActions  from '../../../store/user/actions'
 
-const SearchForm = ({ userName, findUser }) => {
+const SearchForm = React.memo(({ userName, findUser }) => {
   const inputRef = React.createRef()
 
   const searchHandler = (event) => {
@@ -29,7 +29,7 @@ const SearchForm = ({ userName, findUser }) => {
       <button type='submit'>Search</button>
     </form>
   )
-}
+})
 
 const mapStateToProps = (state) => (
   {

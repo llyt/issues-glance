@@ -5,9 +5,18 @@ import * as issuesSelectors from '../../store/issues/selectors'
 import * as issuesActions from '../../store/issues/actions'
 import {connect} from 'react-redux'
 
-const IssuesList = ({ repoName, issuesList, issuesTotalCount, currentPage, paginationHandle, perPage, perPageHandle }) => {
+const IssuesList = React.memo((
+  {
+    repoName,
+    issuesList,
+    issuesTotalCount,
+    currentPage,
+    perPage,
+    paginationHandle,
+    perPageHandle,
+  }) => {
 
-  if (issuesList.length === 0) {
+  if (!issuesTotalCount) {
     return null
   }
 
@@ -24,7 +33,7 @@ const IssuesList = ({ repoName, issuesList, issuesTotalCount, currentPage, pagin
       />
     </div>
   )
-}
+})
 
 const mapStateToProps = (state) => (
   {

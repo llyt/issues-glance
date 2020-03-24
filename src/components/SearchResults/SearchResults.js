@@ -7,7 +7,7 @@ import * as issuesActions from '../../store/issues/actions'
 import * as userSelectors from '../../store/user/selectors'
 import Loader from '../UI/Loader/Loader'
 
-const SearchResults = ({ userName, usersRepositories, totalCount, isLoading, selectPointerRepository }) => {
+const SearchResults = React.memo(({ userName, usersRepositories, totalCount, isLoading, selectPointerRepository }) => {
   const selectHandler = ({ value }) => {
     selectPointerRepository(value)
   }
@@ -34,7 +34,7 @@ const SearchResults = ({ userName, usersRepositories, totalCount, isLoading, sel
       }
     </section>
   )
-}
+})
 
 const mapStateToProps = (state) => (
   {
