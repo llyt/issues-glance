@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import styles from './SearchResults.module.css'
 import Select from 'react-select'
-import * as userActions from '../../store/user/actions'
+import * as issuesActions from '../../store/issues/actions'
 import * as userSelectors from '../../store/user/selectors'
 import Loader from '../UI/Loader/Loader'
 
@@ -47,8 +47,16 @@ const mapStateToProps = (state) => (
 
 const mapDispatchToProps = (dispatch) => (
   {
-    selectPointerRepository: (value) => dispatch(userActions.selectPointerRepository(value))
+    selectPointerRepository: (value) => dispatch(issuesActions.selectPointerRepository(value))
   }
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResults)
+
+SearchResults.propTypes = {
+  userName: PropTypes.string,
+  usersRepositories: PropTypes.array,
+  totalCount: PropTypes.number,
+  isLoading: PropTypes.bool,
+  selectPointerRepository: PropTypes.func
+}

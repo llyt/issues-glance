@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './IssuesList.module.css'
 import IssuesTable from '../IssuesTable/IssuesTable'
-import * as userSelectors from '../../store/user/selectors'
 import * as issuesSelectors from '../../store/issues/selectors'
 import {connect} from 'react-redux'
 
@@ -21,7 +20,7 @@ const IssuesList = ({ repoName, issuesList, issuesTotalCount }) => {
 
 const mapStateToProps = (state) => (
   {
-    repoName: userSelectors.getPointerRepository(state),
+    repoName: issuesSelectors.getPointerRepository(state),
     issuesList: issuesSelectors.getIssuesList(state),
     issuesTotalCount: issuesSelectors.getIssuesTotalCount(state)
   }

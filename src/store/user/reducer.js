@@ -28,12 +28,6 @@ export default (state = initialState, action) => {
         isLoading: false
       }
 
-    case types.SELECT_POINTER_REPOSITORY:
-      return {
-        ...state,
-        pointerRepository: action.payload.value
-      }
-
     default:
       return state
   }

@@ -28,10 +28,3 @@ export const loaderOff = () => (
     type: types.LOADER_OFF
   }
 )
-
-export const selectPointerRepository = (value) => (
-  {
-    type: types.SELECT_POINTER_REPOSITORY,
-    payload: { value }
-  }
-)

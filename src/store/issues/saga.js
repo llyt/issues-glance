@@ -1,7 +1,7 @@
 import { takeLatest, call, put, select } from 'redux-saga/effects'
-import { SELECT_POINTER_REPOSITORY } from '../user/types'
-import { getPointerRepository, getUserName } from '../user/selectors'
-import { getPerPage } from './selectors'
+import { SELECT_POINTER_REPOSITORY } from '../issues/types'
+import { getUserName } from '../user/selectors'
+import { getPointerRepository, getPerPage } from './selectors'
 import * as issuesActions from './actions'
 
 

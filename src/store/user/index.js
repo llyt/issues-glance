@@ -6,7 +6,6 @@ export const initialState = {
   name: null,
   fetchedRepositories: [],
   totalNumberOfRepositories: null,
-  pointerRepository: null,
 }
 
 export default mainReducer
