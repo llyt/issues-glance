@@ -7,6 +7,7 @@ import Select from 'react-select'
 import * as issuesActions from '../../store/issues/actions'
 import * as userSelectors from '../../store/user/selectors'
 import Loader from '../UI/Loader/Loader'
+import isFirstRender from '../../utils/isFirstRender'
 
 const SearchResults = React.memo((
   {
@@ -19,7 +20,6 @@ const SearchResults = React.memo((
   }) => {
 
   const { user, repo } = match.params
-  const isFirstRender = (action) => action === 'POP' || action === 'REPLACE'
 
   useEffect(() => {
     if (repo && isFirstRender(history.action)) {

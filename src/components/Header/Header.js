@@ -6,11 +6,10 @@ import Logo from '../UI/Logo/Logo'
 import SearchForm from '../SearchForm/SearchForm'
 import * as userActions from '../../store/user/actions'
 import PropTypes from 'prop-types'
+import isFirstRender from '../../utils/isFirstRender'
 
 const Header = React.memo(({ history, match, findUser }) => {
   const { user } = match.params
-
-  const isFirstRender = (action) => action === 'POP' || action === 'REPLACE'
 
   useEffect(() => {
     if (user && isFirstRender(history.action)) {
