@@ -30,7 +30,7 @@ const IssuesTable = React.memo((
     paginationHandler(nextPageDispatch[event.target.name])
   }
 
-  const tableHeads = ['Status', 'Title', 'Number', 'Author', 'Open Date']
+  const tableHeads = ['Id', 'Status', 'Title', 'Number', 'Author', 'Open Date']
 
   const paginationOptions = [
     { value: '10', label: '10' },
@@ -77,8 +77,9 @@ const IssuesTable = React.memo((
         </tr>
         </thead>
         <tbody>
-        {data.map(({state, title, number, author, openDate}, index) => (
+        {data.map(({id, state, title, number, author, openDate}, index) => (
           <tr key={number}>
+            <td>{makeTableCell(id)}</td>
             <td>{makeTableCell(state)}</td>
             <td>{makeTableCell(title)}</td>
             <td>{makeTableCell(number)}</td>

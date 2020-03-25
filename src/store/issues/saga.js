@@ -12,7 +12,6 @@ export default function* userSaga() {
 }
 
 function* repoFlow() {
-  yield window.scrollTo(0, 0)
   const userName = yield select(getUserName)
   const repo = yield select(getPointerRepository)
   const fetchedIssues = yield (select(getTotalIssues))
@@ -23,9 +22,10 @@ function* repoFlow() {
     try {
       yield put(issuesActions.onLoader())
       const {total_count, items} = yield call(getRepoIssues, userName, repo, page, perPage)
-      const issues = convertRawIssues(items)
+      const issues = convertRawIssues(items, (page - 1) * perPage)
       yield put(issuesActions.fetch_issues(issues, total_count))
       yield put(issuesActions.offLoader())
+
     }
     catch (error) {
       console.error(error)
@@ -41,9 +41,10 @@ async function getRepoIssues(userName, repoName, page, perPage) {
   return await response.json()
 }
 
-function convertRawIssues(raw) {
-  return raw.map(({ state, title, number, user, created_at }) => (
+function convertRawIssues(raw, shift) {
+  return raw.map(({ state, title, number, user, created_at }, index) => (
     {
+      id: index + 1 + shift,
       state,
       title,
       number,
