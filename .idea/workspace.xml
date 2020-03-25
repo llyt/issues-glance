@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d993f8e-1e06-48c7-b778-7158e59cf33c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/repo/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/SearchForm/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/SearchForm/SearchForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/issues/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/user/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/user/saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/user/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/user/selectors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +66,11 @@
     <property name="nodejs_interpreter_path" value="wsl://UBUNTU@/home/llyt/.nvm/versions/node/v13.7.0/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\WebstormProjects\issueglance\src\components" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="js.build_tools.npm">
@@ -118,22 +134,22 @@
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
     <state x="-873" y="221" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1584896894285" />
-    <state width="1053" height="702" key="GridCell.Tab.0.bottom" timestamp="1585062289984">
+    <state width="1053" height="702" key="GridCell.Tab.0.bottom" timestamp="1585135884375">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="702" key="GridCell.Tab.0.bottom/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585062289984" />
-    <state width="1053" height="702" key="GridCell.Tab.0.center" timestamp="1585062289983">
+    <state width="1053" height="702" key="GridCell.Tab.0.bottom/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585135884375" />
+    <state width="1053" height="702" key="GridCell.Tab.0.center" timestamp="1585135884375">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="702" key="GridCell.Tab.0.center/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585062289983" />
-    <state width="1053" height="702" key="GridCell.Tab.0.left" timestamp="1585062289983">
+    <state width="1053" height="702" key="GridCell.Tab.0.center/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585135884375" />
+    <state width="1053" height="702" key="GridCell.Tab.0.left" timestamp="1585135884375">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="702" key="GridCell.Tab.0.left/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585062289983" />
-    <state width="1053" height="702" key="GridCell.Tab.0.right" timestamp="1585062289984">
+    <state width="1053" height="702" key="GridCell.Tab.0.left/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585135884375" />
+    <state width="1053" height="702" key="GridCell.Tab.0.right" timestamp="1585135884375">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>
-    <state width="1053" height="702" key="GridCell.Tab.0.right/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585062289984" />
+    <state width="1053" height="702" key="GridCell.Tab.0.right/-1080.-407.1080.1880/0.0.1920.1040@-1080.-407.1080.1880" timestamp="1585135884375" />
     <state x="-731" y="37" width="731" height="674" key="find.popup" timestamp="1585037042179">
       <screen x="-1080" y="-407" width="1080" height="1880" />
     </state>

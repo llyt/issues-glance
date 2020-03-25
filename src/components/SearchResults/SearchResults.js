@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styles from './SearchResults.module.css'
 import Select from 'react-select'
@@ -9,13 +10,25 @@ import Loader from '../UI/Loader/Loader'
 
 const SearchResults = React.memo((
   {
-    userName,
+    history,
+    match,
     usersRepositories,
-    totalCount,
+    TotalNumberOfRepositories,
     isLoading,
     selectPointerRepository,
   }) => {
+
+  const { user, repo } = match.params
+  const isFirstRender = (action) => action === 'POP' || action === 'REPLACE'
+
+  useEffect(() => {
+    if (repo && isFirstRender(history.action)) {
+      selectPointerRepository(repo)
+    }
+  }, [repo, history.action, selectPointerRepository])
+
   const selectHandler = ({ value }) => {
+    history.push(`/${user}/${value}/issues`)
     selectPointerRepository(value)
   }
 
@@ -23,14 +36,10 @@ const SearchResults = React.memo((
     return <Loader />
   }
 
-  if (!totalCount) {
-    return null
-  }
-
   return (
     <section className={`${styles.SearchResults} container`}>
       <div className={styles.SearchResultsCount}>
-        <p>{userName} has <strong>{totalCount}</strong> repo</p>
+        <p>{user} has <strong>{TotalNumberOfRepositories}</strong> repo</p>
       </div>
       {usersRepositories.length !== 0
         && <Select
@@ -48,9 +57,8 @@ const SearchResults = React.memo((
 const mapStateToProps = (state) => (
   {
     isLoading: userSelectors.getLoadingState(state),
-    userName: userSelectors.getUserName(state),
     usersRepositories: userSelectors.getUserRepositories(state),
-    totalCount: userSelectors.getTotalCount(state)
+    TotalNumberOfRepositories: userSelectors.getTotalNumberOfRepositories(state)
   }
 )
 
@@ -60,12 +68,11 @@ const mapDispatchToProps = (dispatch) => (
   }
 )
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchResults)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchResults))
 
 SearchResults.propTypes = {
-  userName: PropTypes.string,
   usersRepositories: PropTypes.array,
-  totalCount: PropTypes.number,
+  TotalNumberOfRepositories: PropTypes.number,
   isLoading: PropTypes.bool,
   selectPointerRepository: PropTypes.func,
 }

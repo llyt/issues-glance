@@ -1,4 +1,5 @@
 import { takeLatest, call, put, select } from 'redux-saga/effects'
+import Api from '../api'
 import { FIND_USER  } from './types'
 import * as userActions from './actions'
 import { getUserName } from './selectors'
@@ -13,7 +14,7 @@ function* userFlow() {
   if (userName !== '') {
     try {
       yield put(userActions.loaderOn())
-      const {total_count, items} = yield call(getUserRepos, userName)
+      const {total_count, items} = yield call(fetchUserRepos, userName)
       const userRepos = items.map(({name}) => ({name}))
       yield put(userActions.requestRepositories(userRepos, total_count))
       yield put(userActions.loaderOff())
@@ -25,7 +26,7 @@ function* userFlow() {
   }
 }
 
-async function getUserRepos(userName) {
-  const response = await fetch(`https://api.github.com/search/repositories?sort=stars&per_page=100&q=user:${userName}`)
+async function fetchUserRepos(userName) {
+  const response = await Api.getRepos(userName)
   return await response.json()
 }
