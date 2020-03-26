@@ -12,3 +12,4 @@ export const getPage = (state) => state.issues.page
 export const getPerPage = (state) => state.issues.perPage
 export const getIssuesTotalCount = (state) => state.issues.issuesTotalCount
 export const getPointerRepository = (state) => state.issues.pointerRepository
+export const getTotalPages = (state) => state.issues.totalPages

@@ -7,7 +7,7 @@ import {
   getPerPage,
   getPointerRepository,
   getTotalIssues,
-  getIssuesTotalCount
+  getTotalPages
 } from './selectors'
 import * as issuesActions from './actions'
 
@@ -24,9 +24,9 @@ function* repoFlow() {
   const fetchedIssues = yield (select(getTotalIssues))
   const page = yield select(getPage)
   const perPage = yield select(getPerPage)
-  const issuesTotalCount = yield select(getIssuesTotalCount)
+  const totalPages = yield select(getTotalPages)
 
-  if (issuesTotalCount === null || fetchedIssues.length < issuesTotalCount) {
+  if (!totalPages || Math.ceil(fetchedIssues.length / perPage) < totalPages) {
     try {
       yield put(issuesActions.onLoader())
       const {total_count, items} = yield call(fetchRepoIssues, userName, repo, page, perPage)

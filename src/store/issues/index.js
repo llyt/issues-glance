@@ -7,7 +7,8 @@ export const initialState = {
   fetchedIssues: [],
   page: 1,
   perPage: 10,
-  issuesTotalCount: null
+  issuesTotalCount: null,
+  totalPages: null
 }
 
 export default mainReducer

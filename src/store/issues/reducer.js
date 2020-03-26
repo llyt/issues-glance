@@ -30,6 +30,7 @@ export default (state = initialState, action) => {
         ...state,
         fetchedIssues: [...state.fetchedIssues, ...action.payload.issues],
         issuesTotalCount: action.payload.total,
+        totalPages: Math.ceil(action.payload.total / state.perPage)
       }
 
     case FIND_USER:
