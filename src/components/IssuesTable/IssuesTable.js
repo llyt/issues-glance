@@ -18,7 +18,13 @@ const IssuesTable = React.memo((
   // TODO Fix when issues on page less than total
   const totalPages = Math.ceil(issuesTotalCount / perPage)
 
-  const paginationCountOf = `${currentPage * perPage - perPage + 1}-${currentPage * perPage} of ${issuesTotalCount}`
+  const makePaginationCount = () => {
+    if (currentPage !== totalPages) {
+      return `${currentPage * perPage - perPage + 1}-${currentPage * perPage} of ${issuesTotalCount}`
+    }
+    return `${currentPage * perPage - perPage + 1}-${issuesTotalCount} of ${issuesTotalCount}`
+  }
+
 
   const selectHandle = ({ value }) => {
     perPageHandler(value)
@@ -101,7 +107,7 @@ const IssuesTable = React.memo((
             onChange={selectHandle}
             />
           </div>
-          <div className={styles.PaginationCountOf}>{paginationCountOf}</div>
+          <div className={styles.PaginationCountOf}>{makePaginationCount()}</div>
           { totalPages > 1
             &&
             <div className={styles.PaginationNav}>

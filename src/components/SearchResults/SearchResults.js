@@ -47,6 +47,7 @@ const SearchResults = React.memo((
             options={usersRepositories}
             placeholder='Choose a repository...'
             isSearchable={true}
+            defaultValue={repo ? usersRepositories.filter(({value}) => value === repo) : null}
             onChange={selectHandler}
           />
       }
