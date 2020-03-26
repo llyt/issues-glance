@@ -25,7 +25,6 @@ const IssuesTable = React.memo((
     return `${currentPage * perPage - perPage + 1}-${issuesTotalCount} of ${issuesTotalCount}`
   }
 
-
   const selectHandle = ({ value }) => {
     perPageHandler(value)
   }

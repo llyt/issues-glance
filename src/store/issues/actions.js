@@ -19,12 +19,13 @@ export const offLoader = () => (
   }
 )
 
-export const fetch_issues = (issues, total) => (
+export const fetch_issues = (issues, total, page) => (
   {
     type: types.FETCH_ISSUES,
     payload: {
       issues,
-      total
+      total,
+      page
     }
   }
 )

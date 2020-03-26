@@ -6,8 +6,7 @@ import {
   getPage,
   getPerPage,
   getPointerRepository,
-  getTotalIssues,
-  getTotalPages
+  getFetchedPages,
 } from './selectors'
 import * as issuesActions from './actions'
 
@@ -21,17 +20,16 @@ export default function* userSaga() {
 function* repoFlow() {
   const userName = yield select(getUserName)
   const repo = yield select(getPointerRepository)
-  const fetchedIssues = yield (select(getTotalIssues))
   const page = yield select(getPage)
   const perPage = yield select(getPerPage)
-  const totalPages = yield select(getTotalPages)
+  const fetchedPages = yield (select(getFetchedPages))
 
-  if (!totalPages || Math.ceil(fetchedIssues.length / perPage) < totalPages) {
+  if (!fetchedPages.includes(page)) {
     try {
       yield put(issuesActions.onLoader())
       const {total_count, items} = yield call(fetchRepoIssues, userName, repo, page, perPage)
       const issues = convertRawIssues(items, (page - 1) * perPage)
-      yield put(issuesActions.fetch_issues(issues, total_count))
+      yield put(issuesActions.fetch_issues(issues, total_count, page))
       yield put(issuesActions.offLoader())
     }
     catch (error) {
