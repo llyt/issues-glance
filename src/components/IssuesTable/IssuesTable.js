@@ -16,13 +16,15 @@ const IssuesTable = React.memo((
     perPageHandler
   }) => {
   // TODO Fix when issues on page less than total
+  const totalPages = Math.ceil(issuesTotalCount / perPage)
+
   const paginationCountOf = `${currentPage * perPage - perPage + 1}-${currentPage * perPage} of ${issuesTotalCount}`
 
-  const selectHandler = ({ value }) => {
+  const selectHandle = ({ value }) => {
     perPageHandler(value)
   }
 
-  const onClickPagination = (event) => {
+  const paginationHandle = (event) => {
     const nextPageDispatch = {
       'prev': currentPage - 1,
       'next': currentPage + 1
@@ -89,8 +91,6 @@ const IssuesTable = React.memo((
         ))}
         </tbody>
       </table>
-      { (issuesTotalCount / perPage) > 1
-        &&
         <div className={styles.Pagination}>
           <div className={styles.PaginationPerPage}>
             <span>Rows per page:</span>
@@ -98,28 +98,32 @@ const IssuesTable = React.memo((
             className={styles.Selector}
             options={paginationOptions}
             defaultValue={paginationOptions.filter(({value}) => Number(value) === perPage)}
-            onChange={selectHandler}
+            onChange={selectHandle}
             />
           </div>
           <div className={styles.PaginationCountOf}>{paginationCountOf}</div>
-          <div className={styles.PaginationNav}>
-            <Button
-              type='button'
-              name='prev'
-              disabled={currentPage === 1}
-              onClick={onClickPagination}
-            >
-            &#8592;
-            </Button>
-            <Button
-              type='button'
-              name='next'
-              onClick={onClickPagination}
-            >
-            &#8594;
-            </Button>
-          </div>
-        </div> }
+          { totalPages > 1
+            &&
+            <div className={styles.PaginationNav}>
+              <Button
+                type='button'
+                name='prev'
+                disabled={currentPage === 1}
+                onClick={paginationHandle}
+              >
+                &#8592;
+              </Button>
+              <Button
+                type='button'
+                name='next'
+                disabled={currentPage === totalPages}
+                onClick={paginationHandle}
+              >
+                &#8594;
+              </Button>
+            </div>
+          }
+        </div>
     </div>
   )
 })

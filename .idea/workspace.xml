@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d993f8e-1e06-48c7-b778-7158e59cf33c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/repo/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/user/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchResults/SearchResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/SearchForm/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/SearchForm/SearchForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchForm/SearchForm.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/IssuesTable/IssuesTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/issues/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/issues/saga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/user/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/user/saga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/user/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/user/selectors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

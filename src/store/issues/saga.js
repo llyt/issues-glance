@@ -2,7 +2,13 @@ import { takeLatest, call, put, select } from 'redux-saga/effects'
 import Api from '../api'
 import { SELECT_POINTER_REPOSITORY, PAGINATION_HANDLE, PER_PAGE_HANDLE } from '../issues/types'
 import { getUserName } from '../user/selectors'
-import { getPage, getPerPage, getPointerRepository, getTotalIssues } from './selectors'
+import {
+  getPage,
+  getPerPage,
+  getPointerRepository,
+  getTotalIssues,
+  getIssuesTotalCount
+} from './selectors'
 import * as issuesActions from './actions'
 
 
@@ -18,8 +24,9 @@ function* repoFlow() {
   const fetchedIssues = yield (select(getTotalIssues))
   const page = yield select(getPage)
   const perPage = yield select(getPerPage)
+  const issuesTotalCount = yield select(getIssuesTotalCount)
 
-  if (fetchedIssues.length < page * perPage) {
+  if (issuesTotalCount === null || fetchedIssues.length < issuesTotalCount) {
     try {
       yield put(issuesActions.onLoader())
       const {total_count, items} = yield call(fetchRepoIssues, userName, repo, page, perPage)
