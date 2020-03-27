@@ -74,62 +74,64 @@ const IssuesTable = React.memo((
   }
 
   return (
-    <div className={styles.IssuesTable}>
-      <table>
-        <thead>
-        <tr>
-          {tableHeads.map((head, index) => (
-            <th key={head + index}>{head}</th>
-          ))}
-        </tr>
-        </thead>
-        <tbody>
-        {data.map(({id, state, title, number, author, openDate}, index) => (
-          <tr key={number}>
-            <td>{makeTableCell(id)}</td>
-            <td>{makeTableCell(state)}</td>
-            <td>{makeTableCell(title)}</td>
-            <td>{makeTableCell(number)}</td>
-            <td>{makeAuthorTableCell(author)}</td>
-            <td>{makeTimeTableCell(openDate)}</td>
+    <>
+      <div className={styles.IssuesTable}>
+        <table>
+          <thead>
+          <tr>
+            {tableHeads.map((head, index) => (
+              <th key={head + index}>{head}</th>
+            ))}
           </tr>
-        ))}
-        </tbody>
-      </table>
-        <div className={styles.Pagination}>
-          <div className={styles.PaginationPerPage}>
-            <span>Rows per page:</span>
-            <Select
+          </thead>
+          <tbody>
+          {data.map(({id, state, title, number, author, openDate}, index) => (
+            <tr key={number}>
+              <td>{makeTableCell(id)}</td>
+              <td>{makeTableCell(state)}</td>
+              <td>{makeTableCell(title)}</td>
+              <td>{makeTableCell(number)}</td>
+              <td>{makeAuthorTableCell(author)}</td>
+              <td>{makeTimeTableCell(openDate)}</td>
+            </tr>
+          ))}
+          </tbody>
+        </table>
+      </div>
+      <div className={styles.Pagination}>
+        <div className={styles.PaginationPerPage}>
+          <span>Rows per page:</span>
+          <Select
             className={styles.Selector}
             options={paginationOptions}
             defaultValue={paginationOptions.filter(({value}) => Number(value) === perPage)}
             onChange={selectHandle}
-            />
-          </div>
-          <div className={styles.PaginationCountOf}>{makePaginationCount()}</div>
-          { totalPages > 1
-            &&
-            <div className={styles.PaginationNav}>
-              <Button
-                type='button'
-                name='prev'
-                disabled={currentPage === 1}
-                onClick={paginationHandle}
-              >
-                &#8592;
-              </Button>
-              <Button
-                type='button'
-                name='next'
-                disabled={currentPage === totalPages}
-                onClick={paginationHandle}
-              >
-                &#8594;
-              </Button>
-            </div>
-          }
+          />
         </div>
-    </div>
+        <div className={styles.PaginationCountOf}>{makePaginationCount()}</div>
+        { totalPages > 1
+        &&
+        <div className={styles.PaginationNav}>
+          <Button
+            type='button'
+            name='prev'
+            disabled={currentPage === 1}
+            onClick={paginationHandle}
+          >
+            &#8592;
+          </Button>
+          <Button
+            type='button'
+            name='next'
+            disabled={currentPage === totalPages}
+            onClick={paginationHandle}
+          >
+            &#8594;
+          </Button>
+        </div>
+        }
+      </div>
+    </>
   )
 })
 
