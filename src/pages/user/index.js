@@ -5,7 +5,9 @@ import SearchResults from '../../components/SearchResults/SearchResults'
 const UserPage = () => (
   <>
     <Header/>
-    <SearchResults/>
+    <div className='container'>
+      <SearchResults/>
+    </div>
   </>
 )
 

@@ -14,3 +14,17 @@
   font-weight: 400;
   margin-left: 12px;
 }
+
+@media all and (max-width: 575px) {
+  .Logo {
+    min-width: auto;
+  }
+
+  .Logo svg {
+    width: 24px;
+  }
+
+  .Logo span {
+    display: none;
+  }
+}

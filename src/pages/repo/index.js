@@ -9,8 +9,10 @@ import PropTypes from 'prop-types'
 const RepoPage = ({ isLoading }) => (
   <>
     <Header/>
-    <SearchResults/>
-    {!isLoading && <IssuesList/>}
+    <div className='container'>
+      <SearchResults/>
+      {!isLoading && <IssuesList/>}
+    </div>
   </>
 )
 

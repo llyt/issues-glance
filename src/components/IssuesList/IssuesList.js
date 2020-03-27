@@ -32,7 +32,7 @@ const IssuesList = React.memo((
   }
 
   return (
-    <section className={`${styles.IssuesList} container`}>
+    <section className={styles.IssuesList}>
       <h2>"{repoName}" issues: {issuesTotalCount}</h2>
       <IssuesTable
         isLoading={isLoading}

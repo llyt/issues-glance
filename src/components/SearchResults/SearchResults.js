@@ -46,7 +46,7 @@ const SearchResults = React.memo((
   }
 
   return (
-    <section className={`${styles.SearchResults} container`}>
+    <section className={styles.SearchResults}>
       <div className={styles.SearchResultsCount}>
         <p>{user} has <strong>{TotalNumberOfRepositories}</strong> repo</p>
       </div>

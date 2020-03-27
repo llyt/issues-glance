@@ -20,6 +20,7 @@
   font-weight: 300;
   border: none;
   margin-left: 8px;
+  outline: none;
 }
 
 .SearchFormInput input:focus {
@@ -47,4 +48,23 @@
 .SearchForm button:active {
   border: 1px solid #0A5B1D;
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, .2);
+}
+
+@media all and (max-width: 575px) {
+  .SearchForm {
+    min-width: auto;
+  }
+  .SearchFormInput {
+    margin-left: 16px;
+    padding: 7px 10px;
+  }
+  .SearchFormInput input {
+    min-width: auto;
+    width: 165px;
+    font-size: 14px;
+  }
+  .SearchForm button {
+    font-size: 14px;
+    padding: 8px 14px
+  }
 }

@@ -3,10 +3,10 @@ import styles from './Logo.module.css'
 import { ReactComponent as LogoEye } from '../../../static/icons/eye-icon.svg'
 
 const Logo = () => (
-  <div className={styles.Logo}>
+  <a href='/' className={styles.Logo}>
     <LogoEye />
     <span>Issue Glance</span>
-  </div>
+  </a>
 )
 
 export default Logo
