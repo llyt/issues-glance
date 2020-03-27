@@ -1,5 +1,4 @@
 import { takeLatest, call, put, select } from 'redux-saga/effects'
-import Api from '../api'
 import { FIND_USER  } from './types'
 import * as userActions from './actions'
 import { getUserName } from './selectors'
@@ -19,14 +18,14 @@ function* userFlow() {
       yield put(userActions.requestRepositories(userRepos, total_count))
       yield put(userActions.loaderOff())
     } catch (error) {
-      console.error(error)
-      // TODO Show error in SearchResults component
+      console.error(error.message)
+      yield put(userActions.errorOccurred('Could not load user repos. Try again after 1 minute.'))
       yield put(userActions.loaderOff())
     }
   }
 }
 
 async function fetchUserRepos(userName) {
-  const response = await Api.getRepos(userName)
+  const response = await fetch(`https://api.github.com/search/repositories?sort=stars&per_page=100&q=user:${userName}`)
   return await response.json()
 }

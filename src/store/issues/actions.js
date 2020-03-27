@@ -44,3 +44,10 @@ export const perPageHandle = (value) => (
     payload: { value }
   }
 )
+
+export const errorOccurred = (message) => (
+  {
+    type: types.FETCH_ISSUES_ERROR,
+    payload: { message }
+  }
+)

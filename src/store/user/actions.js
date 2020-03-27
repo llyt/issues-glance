@@ -28,3 +28,10 @@ export const loaderOff = () => (
     type: types.LOADER_OFF
   }
 )
+
+export const errorOccurred = (message) => (
+  {
+    type: types.FETCH_REPOS_ERROR,
+    payload: { message }
+  }
+)

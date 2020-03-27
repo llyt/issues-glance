@@ -1,5 +1,4 @@
 import { takeLatest, call, put, select } from 'redux-saga/effects'
-import Api from '../api'
 import { SELECT_POINTER_REPOSITORY, PAGINATION_HANDLE, PER_PAGE_HANDLE } from '../issues/types'
 import { getUserName } from '../user/selectors'
 import {
@@ -31,17 +30,16 @@ function* repoFlow() {
       const issues = convertRawIssues(items, (page - 1) * perPage)
       yield put(issuesActions.fetch_issues(issues, total_count, page))
       yield put(issuesActions.offLoader())
-    }
-    catch (error) {
-      console.error(error)
-      // TODO Show error in IssuesList component
+    } catch (error) {
+      console.error(error.message)
+      yield put(issuesActions.errorOccurred('Could not load issues. Try again after 1 minute.'))
       yield put(issuesActions.offLoader())
     }
   }
 }
 
 async function fetchRepoIssues(userName, repoName, page, perPage) {
-  const response = await Api.getIssues(userName, repoName, perPage, page)
+  const response = await fetch(`https://api.github.com/search/issues?page=${page}&per_page=${perPage}&q=repo:${userName}/${repoName}`)
   return await response.json()
 }
 

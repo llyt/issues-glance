@@ -15,7 +15,7 @@ const IssuesTable = React.memo((
     paginationHandler,
     perPageHandler
   }) => {
-  // TODO Fix when issues on page less than total
+
   const totalPages = Math.ceil(issuesTotalCount / perPage)
 
   const makePaginationCount = () => {

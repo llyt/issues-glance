@@ -28,6 +28,12 @@ export default (state = initialState, action) => {
         isLoading: false
       }
 
+    case types.FETCH_REPOS_ERROR:
+      return {
+        ...state,
+        error: action.payload.message
+      }
+
     default:
       return state
   }

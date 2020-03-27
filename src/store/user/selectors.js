@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect'
 
+export const getError = (state) => state.user.error
 export const getFetchedRepositories = (state) => state.user.fetchedRepositories
 export const getLoadingState = (state) => state.user.isLoading
 export const getUserName = (state) => state.user.name

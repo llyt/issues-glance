@@ -6,11 +6,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case types.SELECT_POINTER_REPOSITORY:
       return {
-        ...state,
-        fetchedIssues: initialState.fetchedIssues,
+        ...initialState,
         pointerRepository: action.payload.value,
-        perPage: initialState.perPage,
-        page: initialState.page,
       }
 
     case types.ON_LOADER:
@@ -52,6 +49,12 @@ export default (state = initialState, action) => {
         page: initialState.page,
         fetchedIssues: initialState.fetchedIssues,
         fetchedPages: initialState.fetchedPages
+      }
+
+    case types.FETCH_ISSUES_ERROR:
+      return {
+        ...state,
+        error: action.payload.message
       }
 
     default:

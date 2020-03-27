@@ -11,6 +11,7 @@ import isFirstRender from '../../utils/isFirstRender'
 
 const SearchResults = React.memo((
   {
+    error,
     history,
     match,
     usersRepositories,
@@ -30,6 +31,14 @@ const SearchResults = React.memo((
   const selectHandler = ({ value }) => {
     history.push(`/${user}/${value}/issues`)
     selectPointerRepository(value)
+  }
+
+  if (error) {
+    return (
+      <div className='container'>
+        <h3>{error}</h3>
+      </div>
+    )
   }
 
   if (isLoading) {
@@ -57,6 +66,7 @@ const SearchResults = React.memo((
 
 const mapStateToProps = (state) => (
   {
+    error: userSelectors.getError(state),
     isLoading: userSelectors.getLoadingState(state),
     usersRepositories: userSelectors.getUserRepositories(state),
     TotalNumberOfRepositories: userSelectors.getTotalNumberOfRepositories(state)
@@ -72,6 +82,7 @@ const mapDispatchToProps = (dispatch) => (
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchResults))
 
 SearchResults.propTypes = {
+  error: PropTypes.string,
   usersRepositories: PropTypes.array,
   TotalNumberOfRepositories: PropTypes.number,
   isLoading: PropTypes.bool,
