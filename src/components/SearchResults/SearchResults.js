@@ -83,6 +83,8 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchRes
 
 SearchResults.propTypes = {
   error: PropTypes.string,
+  history: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
   usersRepositories: PropTypes.array,
   TotalNumberOfRepositories: PropTypes.number,
   isLoading: PropTypes.bool,

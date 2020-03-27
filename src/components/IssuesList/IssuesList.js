@@ -1,9 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import styles from './IssuesList.module.css'
 import IssuesTable from '../IssuesTable/IssuesTable'
 import * as issuesSelectors from '../../store/issues/selectors'
 import * as issuesActions from '../../store/issues/actions'
-import {connect} from 'react-redux'
 
 const IssuesList = React.memo((
   {
@@ -66,3 +67,15 @@ const mapDispatchToProps = (dispatch) => (
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(IssuesList)
+
+IssuesList.propTypes = {
+  error: PropTypes.string,
+  isLoading: PropTypes.bool.isRequired,
+  repoName: PropTypes.string,
+  issuesList: PropTypes.array,
+  issuesTotalCount: PropTypes.number,
+  currentPage: PropTypes.number.isRequired,
+  perPage: PropTypes.number.isRequired,
+  paginationHandle: PropTypes.func.isRequired,
+  perPageHandle: PropTypes.func.isRequired
+}

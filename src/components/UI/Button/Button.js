@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = ({title, type, name, disabled, onClick, children}) => (
+const Button = ({ type, name, disabled, onClick, children }) => (
   <button
     type={type || 'button'}
     disabled={disabled}

@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 import styles from './Header.module.css'
 import Logo from '../UI/Logo/Logo'
 import SearchForm from '../SearchForm/SearchForm'
 import * as userActions from '../../store/user/actions'
-import PropTypes from 'prop-types'
 import isFirstRender from '../../utils/isFirstRender'
 
 const Header = React.memo(({ history, match, findUser }) => {
