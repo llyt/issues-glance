@@ -5,8 +5,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case types.FIND_USER:
       return {
-        ...state,
-        name: action.payload.userName
+        ...initialState,
+        name: action.payload.userName,
       }
 
     case types.REQUEST_REPOSITORIES:
