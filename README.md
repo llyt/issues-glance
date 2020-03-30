@@ -1,4 +1,4 @@
-# [Issue Glance](https://issues-glance.herokuapp.com/) &middot; learning project
+# [Issue Glance](https://issue-glance.herokuapp.com/) &middot; learning project
 
 Issue Glance is my 2nd test project in learning React library.
 
